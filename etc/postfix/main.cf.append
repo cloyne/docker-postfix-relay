@@ -27,8 +27,8 @@ smtpd_sasl_security_options = noanonymous, noplaintext
 smtpd_sasl_local_domain =
 
 smtpd_tls_CApath = /etc/ssl/certs
-smtpd_tls_cert_file = /etc/ssl/certs/ssl-cert-snakeoil.pem
-smtpd_tls_key_file = /etc/ssl/private/ssl-cert-snakeoil.key
+smtpd_tls_cert_file = /ssl/live/mail.cloyne.org/fullchain.pem
+smtpd_tls_key_file = /ssl/live/mail.cloyne.org/privkey.pem
 smtpd_tls_mandatory_exclude_ciphers = aNULL
 
 smtpd_tls_loglevel = 1
