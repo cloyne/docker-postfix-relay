@@ -12,4 +12,5 @@ COPY ./etc /etc
 COPY /etc/postfix/sasl/smtpd.conf /usr/lib/sasl2/smptd.conf
 RUN sed -i 's/START=no/START=yes/' /etc/default/saslauthd && \
  sed -i 's/MECHANISMS="pam"/MECHANISMS="sasldb"/' /etc/default/saslauthd && \
+ touch /etc/sasldb2 && \
  service saslauthd start
