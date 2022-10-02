@@ -10,6 +10,6 @@ RUN apt-get update -q -q && \
 
 COPY ./etc /etc
 COPY /etc/postfix/sasl/smtpd.conf /usr/lib/sasl2/smptd.conf
-RUN sed -i 's/START=no/START=yes/' /etc/default/saslauthd
-RUN sed -i 's/MECHANISMS="pam"/MECHANISMS="sasldb"/' /etc/default/saslauthd
-RUN service saslauthd start
+RUN sed -i 's/START=no/START=yes/' /etc/default/saslauthd && \
+ sed -i 's/MECHANISMS="pam"/MECHANISMS="sasldb"/' /etc/default/saslauthd && \
+ service saslauthd start
