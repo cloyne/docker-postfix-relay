@@ -20,3 +20,6 @@ sympa_destination_recipient_limit = 1
 sympadomain_destination_recipient_limit = 1
 sympabounce_destination_recipient_limit = 1
 sympabouncedomain_destination_recipient_limit = 1
+
+smtp_sasl_auth_enable = yes
+smtp_tls_security_level = encrypt

@@ -14,3 +14,8 @@ sympabounce	unix	-	n	n	-	-	pipe
 sympabouncedomain	unix	-	n	n	-	-	pipe
   -o soft_bounce=yes
   flags=RF user=mailpipe:mailpipe argv=/usr/bin/ssh -i /etc/sympa/shared/id_rsa -o UserKnownHostsFile=/etc/sympa/shared/known_hosts -T sympa@sympa bouncequeue sympa@${domain}
+submission  inet    n   -   -   -   -   smtpd
+  -o syslog_name=postfix/submission
+  -o stmpd_tls_security_level=encrypt
+  -o smtpd_sasl_auth_enable=yes
+  -o smtpd_client_restrictions=premit_sasl_authentication,reject
