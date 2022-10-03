@@ -23,7 +23,7 @@ sympabouncedomain_destination_recipient_limit = 1
 
 smtpd_sasl_auth_enable = yes
 smtpd_sasl_path = smtpd
-smtpd_sasl_security_options = noanonymous, noplaintext
+smtpd_sasl_security_options =
 smtpd_sasl_local_domain =
 
 smtpd_tls_CApath = /etc/ssl/certs
