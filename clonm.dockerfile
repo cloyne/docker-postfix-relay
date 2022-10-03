@@ -9,7 +9,9 @@ RUN apt-get update -q -q && \
  cp /etc/postfix/master.cf /etc/postfix/master.cf.orig && \
  mkdir -p /etc/service
 
-COPY ./etc /etc
+COPY ./etc/postfix /etc/postfix
+COPY ./etc/service/postfix /etc/service/postfix
+COPY ./etc/aliases /etc/aliases
 RUN sed -i 's/smtpd_tls_cert_file=.*/smtpd_tls_cert_file=\/ssl\/live\/mail.cloyne.org\/fullchain.pem/' /etc/postfix/main.cf && \
  sed -i 's/smtpd_tls_key_file=.*/smtpd_tls_key_file=\/ssl\/live\/mail.cloyne.org\/privkey.pem' /etc/postfix/main.cf && \
  sed -i 's/smtpd_tls_session_cache_database=.*/smtpd_tls_session_cache_database=btree:\/var\/run\/postfix\/smtpd_cache' /etc/postfix/main.cf
