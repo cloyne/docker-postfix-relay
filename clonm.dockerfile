@@ -18,5 +18,5 @@ RUN sed -i 's/smtpd_tls_session_cache_database=.*$/smtpd_tls_session_cache_datab
 COPY /etc/postfix/sasl/smtpd.conf /usr/lib/sasl2/smptd.conf
 RUN sed -i 's/START=no/START=yes/' /etc/default/saslauthd && \
  sed -i 's/MECHANISMS="pam"/MECHANISMS="sasldb"/' /etc/default/saslauthd && \
- touch /etc/sasldb2 && \
+ ln -s /etc/postfix/sasl/sasldb2 /etc/sasldb2 && \
  service saslauthd start
