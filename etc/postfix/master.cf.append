@@ -18,4 +18,4 @@ submission  inet    n   -   -   -   -   smtpd
   -o syslog_name=postfix/submission
   -o stmpd_tls_security_level=encrypt
   -o smtpd_sasl_auth_enable=yes
-  -o smtpd_client_restrictions=premit_sasl_authentication,reject
+  -o smtpd_client_restrictions=permit_sasl_authentication,reject
