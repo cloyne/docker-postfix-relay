@@ -28,6 +28,8 @@ smtpd_sasl_local_domain =
 
 smtpd_tls_CApath = /etc/ssl/certs
 smtpd_tls_mandatory_exclude_ciphers = aNULL
+smtp_tls_mandatory_protocols = TLSv1.2
+smtpd_tls_mandatory_protocols = TLSv1.2
 
 smtpd_tls_loglevel = 3
 smtpd_tls_received_header = yes
