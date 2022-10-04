@@ -4,16 +4,16 @@
 
 sympa	unix	-	n	n	-	-	pipe
   -o soft_bounce=yes
-  flags=RF user=mailpipe:mailpipe argv=/usr/bin/ssh -i /etc/sympa/shared/id_rsa -o UserKnownHostsFile=/etc/sympa/shared/known_hosts -T sympa@cloyne.org:2025 queue ${recipient}
+  flags=RF user=mailpipe:mailpipe argv=/usr/bin/ssh -i /etc/sympa/shared/id_rsa -o UserKnownHostsFile=/etc/sympa/shared/known_hosts -T -p 2025 sympa@cloyne.org queue ${recipient}
 sympadomain	unix	-	n	n	-	-	pipe
   -o soft_bounce=yes
-  flags=RF user=mailpipe:mailpipe argv=/usr/bin/ssh -i /etc/sympa/shared/id_rsa -o UserKnownHostsFile=/etc/sympa/shared/known_hosts -T sympa@cloyne.org:2025 queue sympa@${domain}
+  flags=RF user=mailpipe:mailpipe argv=/usr/bin/ssh -i /etc/sympa/shared/id_rsa -o UserKnownHostsFile=/etc/sympa/shared/known_hosts -T -p 2025 sympa@cloyne.org queue sympa@${domain}
 sympabounce	unix	-	n	n	-	-	pipe
   -o soft_bounce=yes
-  flags=RF user=mailpipe:mailpipe argv=/usr/bin/ssh -i /etc/sympa/shared/id_rsa -o UserKnownHostsFile=/etc/sympa/shared/known_hosts -T sympa@cloyne.org:2025 bouncequeue ${user}@${domain}
+  flags=RF user=mailpipe:mailpipe argv=/usr/bin/ssh -i /etc/sympa/shared/id_rsa -o UserKnownHostsFile=/etc/sympa/shared/known_hosts -T -p 2025 sympa@cloyne.org bouncequeue ${user}@${domain}
 sympabouncedomain	unix	-	n	n	-	-	pipe
   -o soft_bounce=yes
-  flags=RF user=mailpipe:mailpipe argv=/usr/bin/ssh -i /etc/sympa/shared/id_rsa -o UserKnownHostsFile=/etc/sympa/shared/known_hosts -T sympa@cloyne.org:2025 bouncequeue sympa@${domain}
+  flags=RF user=mailpipe:mailpipe argv=/usr/bin/ssh -i /etc/sympa/shared/id_rsa -o UserKnownHostsFile=/etc/sympa/shared/known_hosts -T -p 2025 sympa@cloyne.org bouncequeue sympa@${domain}
 submission  inet    n   -   -   -   -   smtpd
   -o syslog_name=postfix/submission
   -o stmpd_tls_security_level=encrypt
