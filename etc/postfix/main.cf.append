@@ -37,5 +37,6 @@ smtpd_tls_protocols =
 smtpd_recipient_restrictions =
     reject_unknown_recipient_domain,
     permit_sasl_authenticated,
+    permit_mynetworks,
     reject_non_fqdn_recipient,
     reject_unauth_destination
