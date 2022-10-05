@@ -19,7 +19,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: cloyne/postfix
+  IMAGE_NAME: cloyne/postfix-relay
 
 
 jobs:
@@ -77,7 +77,7 @@ jobs:
           context: .
           file: clonm.dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          tags: cloyne/postfix:clonm,cloyne/postfix:latest,${{ steps.meta.outputs.tags }}
+          tags: cloyne/postfix-relay:clonm,cloyne/postfix-relay:latest,${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
